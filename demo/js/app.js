@@ -11,14 +11,21 @@ particlesJS.load('particles-js', 'particles.json', function() {
 
 /* Otherwise just put the config content (json): */
 
+var number = 80;
+var size = 3;
+var maxDist = 100;
+var rotation = 1;
+var showLink = false;
+var lineThickness = 0.2;
+
 particlesJS('particles-js',
   
   {
     "particles": {
       "number": {
-        "value": 80,
+        "value": number,
         "density": {
-          "enable": true,
+          "enable": false,
           "value_area": 800
         }
       },
@@ -28,8 +35,8 @@ particlesJS('particles-js',
       "shape": {
         "type": "circle",
         "stroke": {
-          "width": 0,
-          "color": "#000000"
+            "width": lineThickness,
+          "color": "#fff"
         },
         "polygon": {
           "nb_sides": 5
@@ -41,7 +48,7 @@ particlesJS('particles-js',
         }
       },
       "opacity": {
-        "value": 0.5,
+        "value": 1,
         "random": false,
         "anim": {
           "enable": false,
@@ -51,8 +58,8 @@ particlesJS('particles-js',
         }
       },
       "size": {
-        "value": 5,
-        "random": true,
+        "value": size,
+        "random": false,
         "anim": {
           "enable": false,
           "speed": 40,
@@ -61,23 +68,23 @@ particlesJS('particles-js',
         }
       },
       "line_linked": {
-        "enable": true,
-        "distance": 150,
+        "enable": showLink,
+        "distance": maxDist,
         "color": "#ffffff",
         "opacity": 0.4,
-        "width": 1
+        "width": .6
       },
       "move": {
         "enable": true,
-        "speed": 6,
+        "speed": 1,
         "direction": "none",
         "random": false,
         "straight": false,
         "out_mode": "out",
         "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
+          "enable": true,
+          "rotateX": rotation,
+          "rotateY": rotation
         }
       }
     },
@@ -85,11 +92,11 @@ particlesJS('particles-js',
       "detect_on": "canvas",
       "events": {
         "onhover": {
-          "enable": true,
+          "enable": false,
           "mode": "repulse"
         },
         "onclick": {
-          "enable": true,
+          "enable": false,
           "mode": "push"
         },
         "resize": true
@@ -121,8 +128,8 @@ particlesJS('particles-js',
     },
     "retina_detect": true,
     "config_demo": {
-      "hide_card": false,
-      "background_color": "#b61924",
+      "hide_card": true,
+      "background_color": "#373737",
       "background_image": "",
       "background_position": "50% 50%",
       "background_repeat": "no-repeat",

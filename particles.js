@@ -20,9 +20,9 @@ var pJS = function(tag_id, params){
     },
     particles: {
       number: {
-        value: 400,
+        value: 3,
         density: {
-          enable: true,
+          enable: false,
           value_area: 800
         }
       },
@@ -65,7 +65,7 @@ var pJS = function(tag_id, params){
         }
       },
       line_linked: {
-        enable: true,
+        enable: false,
         distance: 100,
         color: '#fff',
         opacity: 1,
@@ -80,9 +80,9 @@ var pJS = function(tag_id, params){
         out_mode: 'out',
         bounce: false,
         attract: {
-          enable: false,
-          rotateX: 3000,
-          rotateY: 3000
+          enable: true,
+          rotateX: 0.5,
+          rotateY: 0.5
         }
       },
       array: []
@@ -425,7 +425,8 @@ var pJS = function(tag_id, params){
     switch(p.shape){
 
       case 'circle':
-        pJS.canvas.ctx.arc(p.x, p.y, radius, 0, Math.PI * 2, false);
+            pJS.canvas.ctx.arc(p.x, p.y, radius, 0, Math.PI * 2, false);
+            
       break;
 
       case 'edge':
@@ -492,7 +493,7 @@ var pJS = function(tag_id, params){
       pJS.canvas.ctx.stroke();
     }
     
-    pJS.canvas.ctx.fill();
+    pJS.canvas.ctx.stroke();
     
   };
 
@@ -693,12 +694,25 @@ var pJS = function(tag_id, params){
         //pJS.canvas.ctx.lineCap = 'round'; /* performance issue */
         
         /* path */
-        pJS.canvas.ctx.beginPath();
-        pJS.canvas.ctx.moveTo(p1.x, p1.y);
-        pJS.canvas.ctx.lineTo(p2.x, p2.y);
-        pJS.canvas.ctx.stroke();
-        pJS.canvas.ctx.closePath();
+        //pJS.canvas.ctx.beginPath();
+        //pJS.canvas.ctx.moveTo(p1.x, p1.y);
+        //pJS.canvas.ctx.lineTo(p2.x, p2.y);
+        //pJS.canvas.ctx.stroke();
+        //pJS.canvas.ctx.closePath();
 
+
+          /* area of influence */
+          pJS.canvas.ctx.beginPath();
+          pJS.canvas.ctx.moveTo(p1.x + pJS.particles.line_linked.distance / 2, p1.y)
+          pJS.canvas.ctx.arc(p1.x, p1.y, pJS.particles.line_linked.distance / 2, 0, Math.PI * 2, true);
+          pJS.canvas.ctx.stroke();
+          pJS.canvas.ctx.closePath();
+
+          pJS.canvas.ctx.beginPath();
+          pJS.canvas.ctx.moveTo(p2.x + pJS.particles.line_linked.distance / 2, p2.y)
+          pJS.canvas.ctx.arc(p2.x, p2.y, pJS.particles.line_linked.distance / 2, 0, Math.PI * 2, true);
+          pJS.canvas.ctx.stroke();
+          pJS.canvas.ctx.closePath();
       }
 
     }
