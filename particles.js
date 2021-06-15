@@ -433,7 +433,7 @@ var pJS = function(tag_id, params){
 
       case 'circle':
             pJS.canvas.ctx.arc(p.x, p.y, radius, 0, Math.PI * 2, false);
-            
+            // drawing traces goes here (for loop where i < number of traces)
       break;
 
       case 'edge':

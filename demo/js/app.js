@@ -14,22 +14,22 @@ const t = true;
 const f = false;
 
 
-var number = 12,
-    size = 0,
-    color = "#fff",
+var number = 7,
+    size = 0.3,
+    color = "#000000",
     opacity = 0,
 
     speed = .01,
 
     maxDist = 600,
-    rotation = 1.5,
+    rotation = 2,
 
     densityON = f,
     denseVal = 200,
 
-    showLink = t,
-    lineThickness = .6,
-    lineOpacity = 0.1;
+    showLink = f,
+    lineThickness = 1,
+    lineOpacity = 0.01;
 
 
 
