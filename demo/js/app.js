@@ -10,27 +10,42 @@ particlesJS.load('particles-js', 'particles.json', function() {
 */
 
 /* Otherwise just put the config content (json): */
+const t = true;
+const f = false;
 
-var number = 80;
-var size = 3;
-var maxDist = 100;
-var rotation = 1;
-var showLink = false;
-var lineThickness = 0.2;
 
-particlesJS('particles-js',
+var number = 200,
+    size = 0.6,
+    color = "#fff",
+    opacity = 0.5,
+
+    speed = .001,
+
+    maxDist = 600,
+    rotation = 1.5,
+
+    densityON = f,
+    denseVal = 200,
+
+    showLink = f,
+    lineThickness = 0.2,
+    lineOpacity = 0.6;
+
+
+
+var pj = particlesJS('particles-js',
   
   {
     "particles": {
       "number": {
         "value": number,
         "density": {
-          "enable": false,
-          "value_area": 800
+            "enable": densityON,
+            "value_area": denseVal
         }
       },
       "color": {
-        "value": "#ffffff"
+        "value": color
       },
       "shape": {
         "type": "circle",
@@ -48,7 +63,7 @@ particlesJS('particles-js',
         }
       },
       "opacity": {
-        "value": 1,
+        "value": opacity,
         "random": false,
         "anim": {
           "enable": false,
@@ -71,16 +86,16 @@ particlesJS('particles-js',
         "enable": showLink,
         "distance": maxDist,
         "color": "#ffffff",
-        "opacity": 0.4,
-        "width": .6
+        "opacity": lineOpacity,
+          "width": lineThickness
       },
       "move": {
         "enable": true,
-        "speed": 1,
+        "speed": speed,
         "direction": "none",
         "random": false,
         "straight": false,
-        "out_mode": "out",
+        "out_mode": "bounce",
         "attract": {
           "enable": true,
           "rotateX": rotation,
@@ -138,3 +153,5 @@ particlesJS('particles-js',
   }
 
 );
+
+

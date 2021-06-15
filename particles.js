@@ -7,6 +7,8 @@
 /* v2.0.0
 /* ----------------------------------------------- */
 
+var noclear = true;
+
 var pJS = function(tag_id, params){
 
   var canvas_el = document.querySelector('#'+tag_id+' > .particles-js-canvas-el');
@@ -182,7 +184,12 @@ var pJS = function(tag_id, params){
 
 
 
-  /* ---------- pJS functions - canvas ------------ */
+/* ---------- pJS functions - canvas ------------ */
+    window.addEventListener("click", function (event) {
+        console.log(pJS.canvas);
+        //pJS.fn.canvasClear();
+    });
+
 
   pJS.fn.canvasInit = function(){
     pJS.canvas.ctx = pJS.canvas.el.getContext('2d');
@@ -493,7 +500,7 @@ var pJS = function(tag_id, params){
       pJS.canvas.ctx.stroke();
     }
     
-    pJS.canvas.ctx.stroke();
+    pJS.canvas.ctx.fill();
     
   };
 
@@ -510,14 +517,15 @@ var pJS = function(tag_id, params){
 
       /* the particle */
       var p = pJS.particles.array[i];
-
-      // var d = ( dx = pJS.interactivity.mouse.click_pos_x - p.x ) * dx + ( dy = pJS.interactivity.mouse.click_pos_y - p.y ) * dy;
-      // var f = -BANG_SIZE / d;
-      // if ( d < BANG_SIZE ) {
-      //     var t = Math.atan2( dy, dx );
-      //     p.vx = f * Math.cos(t);
-      //     p.vy = f * Math.sin(t);
-      // }
+      {
+            // var d = ( dx = pJS.interactivity.mouse.click_pos_x - p.x ) * dx + ( dy = pJS.interactivity.mouse.click_pos_y - p.y ) * dy;
+            // var f = -BANG_SIZE / d;
+            // if ( d < BANG_SIZE ) {
+            //     var t = Math.atan2( dy, dx );
+            //     p.vx = f * Math.cos(t);
+            //     p.vy = f * Math.sin(t);
+            // }
+        }
 
       /* move the particle */
       if(pJS.particles.move.enable){
@@ -637,8 +645,10 @@ var pJS = function(tag_id, params){
 
   pJS.fn.particlesDraw = function(){
 
-    /* clear canvas */
-    pJS.canvas.ctx.clearRect(0, 0, pJS.canvas.w, pJS.canvas.h);
+  /* clear canvas */
+
+      if (!noclear) { pJS.canvas.ctx.clearRect(0, 0, pJS.canvas.w, pJS.canvas.h); }
+    
 
     /* update each particles param */
     pJS.fn.particlesUpdate();
@@ -708,11 +718,11 @@ var pJS = function(tag_id, params){
           pJS.canvas.ctx.stroke();
           pJS.canvas.ctx.closePath();
 
-          pJS.canvas.ctx.beginPath();
-          pJS.canvas.ctx.moveTo(p2.x + pJS.particles.line_linked.distance / 2, p2.y)
-          pJS.canvas.ctx.arc(p2.x, p2.y, pJS.particles.line_linked.distance / 2, 0, Math.PI * 2, true);
-          pJS.canvas.ctx.stroke();
-          pJS.canvas.ctx.closePath();
+          //pJS.canvas.ctx.beginPath();
+          //pJS.canvas.ctx.moveTo(p2.x + pJS.particles.line_linked.distance / 2, p2.y)
+          //pJS.canvas.ctx.arc(p2.x, p2.y, pJS.particles.line_linked.distance / 2, 0, Math.PI * 2, true);
+          //pJS.canvas.ctx.stroke();
+          //pJS.canvas.ctx.closePath();
       }
 
     }
@@ -1169,6 +1179,8 @@ var pJS = function(tag_id, params){
         }
 
       });
+
+        
         
     }
 
@@ -1550,6 +1562,9 @@ window.particlesJS.load = function(tag_id, path_config_json, callback){
       }
     }
   };
-  xhr.send();
+    xhr.send();
+
+    
 
 };
+
