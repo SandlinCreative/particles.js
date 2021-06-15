@@ -14,12 +14,12 @@ const t = true;
 const f = false;
 
 
-var number = 200,
-    size = 0.6,
+var number = 12,
+    size = 0,
     color = "#fff",
-    opacity = 0.5,
+    opacity = 0,
 
-    speed = .001,
+    speed = .01,
 
     maxDist = 600,
     rotation = 1.5,
@@ -27,9 +27,9 @@ var number = 200,
     densityON = f,
     denseVal = 200,
 
-    showLink = f,
-    lineThickness = 0.2,
-    lineOpacity = 0.6;
+    showLink = t,
+    lineThickness = .6,
+    lineOpacity = 0.1;
 
 
 

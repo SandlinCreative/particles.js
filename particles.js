@@ -704,19 +704,19 @@ var pJS = function(tag_id, params){
         //pJS.canvas.ctx.lineCap = 'round'; /* performance issue */
         
         /* path */
-        //pJS.canvas.ctx.beginPath();
-        //pJS.canvas.ctx.moveTo(p1.x, p1.y);
-        //pJS.canvas.ctx.lineTo(p2.x, p2.y);
-        //pJS.canvas.ctx.stroke();
-        //pJS.canvas.ctx.closePath();
+        pJS.canvas.ctx.beginPath();
+        pJS.canvas.ctx.moveTo(p1.x, p1.y);
+        pJS.canvas.ctx.lineTo(p2.x, p2.y);
+        pJS.canvas.ctx.stroke();
+        pJS.canvas.ctx.closePath();
 
 
           /* area of influence */
-          pJS.canvas.ctx.beginPath();
-          pJS.canvas.ctx.moveTo(p1.x + pJS.particles.line_linked.distance / 2, p1.y)
-          pJS.canvas.ctx.arc(p1.x, p1.y, pJS.particles.line_linked.distance / 2, 0, Math.PI * 2, true);
-          pJS.canvas.ctx.stroke();
-          pJS.canvas.ctx.closePath();
+          //pJS.canvas.ctx.beginPath();
+          //pJS.canvas.ctx.moveTo(p1.x + pJS.particles.line_linked.distance / 2, p1.y)
+          //pJS.canvas.ctx.arc(p1.x, p1.y, pJS.particles.line_linked.distance / 2, 0, Math.PI * 2, true);
+          //pJS.canvas.ctx.stroke();
+          //pJS.canvas.ctx.closePath();
 
           //pJS.canvas.ctx.beginPath();
           //pJS.canvas.ctx.moveTo(p2.x + pJS.particles.line_linked.distance / 2, p2.y)
