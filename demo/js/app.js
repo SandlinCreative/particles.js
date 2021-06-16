@@ -15,13 +15,17 @@ const f = false;
 
 
 var clearScreen = true,
-    number = 60,
-    size = 1,
+
+    number = 8,
+    size = 30,
+    stroke = 0.75,
+
     color = "#ffffff",
-    opacity = 1,
+    opacity = 0.5,
+
     tails = 100,
 
-    speed = .01,
+    speed = .1,
 
     maxDist = 600,
     rotation = 2,
@@ -30,9 +34,11 @@ var clearScreen = true,
     denseVal = 200,
 
     showLink = false,
-    lineThickness = 1,
+    linkThickness = 1,
     lineOpacity = 1,
+
     collide = false;
+    //collide = true;
 
 
 
@@ -56,8 +62,9 @@ var pj = particlesJS('particles-js',
             "shape": {
                 "type": "circle",
                 "stroke": {
-                    "width": lineThickness,
-                    "color": "#fff"
+                    "width": stroke,
+                    "color": color,
+                    "opacity": opacity
                 },
                 "polygon": {
                     "nb_sides": 5
@@ -93,7 +100,7 @@ var pj = particlesJS('particles-js',
                 "distance": maxDist,
                 "color": "#ffffff",
                 "opacity": lineOpacity,
-                "width": lineThickness
+                "width": linkThickness
             },
             "move": {
                 "enable": true,
