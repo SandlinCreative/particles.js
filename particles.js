@@ -462,6 +462,14 @@ var pJS = function (tag_id, params) {
         pJS.canvas.ctx.lineWidth = pJS.particles.shape.stroke.width
         pJS.canvas.ctx.beginPath();
 
+        /* draw the tail! */
+        for (var i = 0; i < p.history.length; i++) {
+            pJS.canvas.ctx.beginPath();
+            pJS.canvas.ctx.arc(p.history[i].x, p.history[i].y, radius, 0, Math.PI * 2, false);
+            pJS.canvas.ctx.closePath();
+            pJS.canvas.ctx.stroke();
+        }
+
         switch (p.shape) {
 
             case 'circle':
@@ -527,16 +535,6 @@ var pJS = function (tag_id, params) {
         pJS.canvas.ctx.closePath();
 
 
-
-        /* draw the tail! */
-        for (var i = 0; i < p.history.length; i++) {
-            pJS.canvas.ctx.beginPath();
-            pJS.canvas.ctx.arc(p.history[i].x, p.history[i].y, radius, 0, Math.PI * 2, false);
-            pJS.canvas.ctx.closePath();
-            pJS.canvas.ctx.stroke();
-        }
-
-
         //if (pJS.particles.shape.stroke.width > 0) {
         //    pJS.canvas.ctx.strokeStyle = pJS.particles.shape.stroke.color;
         //    pJS.canvas.ctx.lineWidth = pJS.particles.shape.stroke.width;
@@ -544,7 +542,7 @@ var pJS = function (tag_id, params) {
 
         
 
-        //pJS.canvas.ctx.fill();
+        pJS.canvas.ctx.fill();
 
 
        
