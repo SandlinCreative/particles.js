@@ -458,7 +458,7 @@ var pJS = function (tag_id, params) {
         }
 
         pJS.canvas.ctx.fillStyle = color_value;
-        pJS.canvas.ctx.strokeStyle = color_value;
+        pJS.canvas.ctx.strokeStyle = "white";
         pJS.canvas.ctx.lineWidth = pJS.particles.shape.stroke.width
         pJS.canvas.ctx.beginPath();
 

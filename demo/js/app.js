@@ -14,17 +14,18 @@ const t = true;
 const f = false;
 
 
+
 var clearScreen = true,
 
-    number = 2,
-    size = 90,
-    stroke = 0.75,
+    number = 6,
+    size = 6,
+    stroke = 0.5,
 
-    fillcolor = "#000000",
-    strokecolor = "#ffffff",
-    opacity = 0.5,
+    fillcolor = "#000",
+    strokecolor = "#fff",
+    opacity = 1,
 
-    tails = 10,
+    tails = 33,
 
     speed = .1,
 
